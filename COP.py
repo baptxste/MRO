@@ -6,17 +6,16 @@ with open('TP/test.json') as f:
 
 n = len(data['stations'])
 
-D = 0
-for e in data['stations']:
-    if max(e['emetteur']) or (e['recepteur']) > D :
-        D = max([max(e['emetteur']), max(e['recepteur'])])
+# x[i][j] fréquence de la station i à la station j, il faut que tout xij soit égale à l'intersection des fréquences émetrices possibles de la station i et réceptrices de j
 
-# x[i][j] fréquence de la station i à la station j 
-
-x = VarArray(size=[n, n], dom=range(D))
+x = VarArray(size=[n, n], x = VarArray(size=[n, n], dom=lambda i, j: set(data['stations'][i]['emetteur']).intersection(data['stations'][j]['recepteur'])))
 satisfy(
 
-for i, j in range(D):
+[abs(x[i][j] - x[k][i]) = data['stations'][i]['delta']
+     for i in range(n)
+     for j in range(n)
+     for k in range(n) if j != k] #il faut que l'écart entre les fréquences émettrices xij et réceptrice xki de la station i soit égal à deltai
+
 
 # at least 2 corners of different colors for any rectangle inside the board
 NValues(x[i1][j1], x[i1][j2], x[i2][j1], x[i2][j2]) > 1
