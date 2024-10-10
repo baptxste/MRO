@@ -1,0 +1,51 @@
+\documentclass[12pt]{article}
+
+\usepackage[utf8]{inputenc}
+\usepackage{url}
+\usepackage{latexsym,amsfonts,amssymb,amsthm,amsmath}
+\usepackage{mathtools}
+\usepackage{enumerate}  
+
+\setlength{\parindent}{0in}
+\setlength{\oddsidemargin}{0in}
+\setlength{\textwidth}{6.5in}
+\setlength{\textheight}{8.8in}
+\setlength{\topmargin}{0in}
+\setlength{\headheight}{18pt}
+
+
+
+\title{Modélisation et résolution pour l'optimisation}
+\author{Noms}
+
+\begin{document}
+
+\maketitle
+
+\vspace{0.5in}
+
+
+\subsection*{Problèmes d'optimisation sous contraintes}
+
+\begin{enumerate}[(i)]
+    \item 
+    \begin{flalign*}
+        & x_{ij} := \text{ Fréquence de station $i$ à station $j$} && \\
+        & t_i := \text{ Région de station $i$} && \\ && \\
+        & X = \{x_{11}, \dotsc, x_{nn}\} \cup \{r_1, \dotsc, r_n\} && \\
+        & D = \{d_{x_{11}}, \dotsc d_{x_{nn}}\} \cup \{d_{r_1}, \dotsc, d_{r_n}\} \text{ avec pour tout } i, j: d_{x_{ij}} = \mathbb{N}, r_i = \{1, \dotsc, k\} && \\
+        & C = \{\forall i \in \{1, \dotsc, n\}: \exists j, k \neq i \Rightarrow \delta_i = |x_{ij} - x_{ji}|\} && \\
+        & \cup \{\forall x_{ij} \in X: \exists k \neq i, l \neq j \Rightarrow |x_{ij} - x_{jl}| \geq \Delta_{ij}, |x_{ij} - x_{ki}| \geq \Delta_{ij}\}
+    \end{flalign*}
+    \begin{itemize}
+        \item 
+        $ \text{min } |X| $
+        \item 
+        $ \underset{x_i \in X}{\text{min }} x_i $
+        \item 
+        $ \text{min }(\underset{x_i \in X}{\text{max }} x_i - \underset{x_i \in X}{\text{min }} x_i) $
+    \end{itemize}
+
+\end{enumerate}
+
+\end{document}
