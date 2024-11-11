@@ -1,0 +1,530 @@
+{
+    "objectif": 3,
+    "system_info": {
+        "machine": "x86_64",
+        "system": "Linux",
+        "release": "6.1.0-26-amd64",
+        "version": "#1 SMP PREEMPT_DYNAMIC Debian 6.1.112-1 (2024-09-30)",
+        "processor": "",
+        "architecture": [
+            "64bit",
+            "ELF"
+        ],
+        "ram": 31692,
+        "cpu_cores": 28
+    },
+    "solvers": {
+        "ACE": {
+            "temps": 0.5689034461975098,
+            "nombre_stations": 50,
+            "stations": [
+                {
+                    "station": 0,
+                    "emetteur": 56,
+                    "recepteur": 294
+                },
+                {
+                    "station": 1,
+                    "emetteur": 252,
+                    "recepteur": 14
+                },
+                {
+                    "station": 2,
+                    "emetteur": 14,
+                    "recepteur": 252
+                },
+                {
+                    "station": 3,
+                    "emetteur": 14,
+                    "recepteur": 252
+                },
+                {
+                    "station": 4,
+                    "emetteur": 28,
+                    "recepteur": 266
+                },
+                {
+                    "station": 5,
+                    "emetteur": 252,
+                    "recepteur": 14
+                },
+                {
+                    "station": 6,
+                    "emetteur": 252,
+                    "recepteur": 14
+                },
+                {
+                    "station": 7,
+                    "emetteur": 252,
+                    "recepteur": 14
+                },
+                {
+                    "station": 8,
+                    "emetteur": 28,
+                    "recepteur": 266
+                },
+                {
+                    "station": 9,
+                    "emetteur": 14,
+                    "recepteur": 252
+                },
+                {
+                    "station": 10,
+                    "emetteur": 14,
+                    "recepteur": 252
+                },
+                {
+                    "station": 11,
+                    "emetteur": 56,
+                    "recepteur": 294
+                },
+                {
+                    "station": 12,
+                    "emetteur": 294,
+                    "recepteur": 56
+                },
+                {
+                    "station": 13,
+                    "emetteur": 42,
+                    "recepteur": 280
+                },
+                {
+                    "station": 14,
+                    "emetteur": 14,
+                    "recepteur": 252
+                },
+                {
+                    "station": 15,
+                    "emetteur": 14,
+                    "recepteur": 252
+                },
+                {
+                    "station": 16,
+                    "emetteur": 56,
+                    "recepteur": 294
+                },
+                {
+                    "station": 17,
+                    "emetteur": 42,
+                    "recepteur": 280
+                },
+                {
+                    "station": 18,
+                    "emetteur": 14,
+                    "recepteur": 252
+                },
+                {
+                    "station": 19,
+                    "emetteur": 56,
+                    "recepteur": 294
+                },
+                {
+                    "station": 20,
+                    "emetteur": 56,
+                    "recepteur": 294
+                },
+                {
+                    "station": 21,
+                    "emetteur": 56,
+                    "recepteur": 294
+                },
+                {
+                    "station": 22,
+                    "emetteur": 28,
+                    "recepteur": 266
+                },
+                {
+                    "station": 23,
+                    "emetteur": 42,
+                    "recepteur": 280
+                },
+                {
+                    "station": 24,
+                    "emetteur": 294,
+                    "recepteur": 56
+                },
+                {
+                    "station": 25,
+                    "emetteur": 280,
+                    "recepteur": 42
+                },
+                {
+                    "station": 26,
+                    "emetteur": 252,
+                    "recepteur": 14
+                },
+                {
+                    "station": 27,
+                    "emetteur": 252,
+                    "recepteur": 14
+                },
+                {
+                    "station": 28,
+                    "emetteur": 14,
+                    "recepteur": 252
+                },
+                {
+                    "station": 29,
+                    "emetteur": 14,
+                    "recepteur": 252
+                },
+                {
+                    "station": 30,
+                    "emetteur": 14,
+                    "recepteur": 252
+                },
+                {
+                    "station": 31,
+                    "emetteur": 14,
+                    "recepteur": 252
+                },
+                {
+                    "station": 32,
+                    "emetteur": 14,
+                    "recepteur": 252
+                },
+                {
+                    "station": 33,
+                    "emetteur": 14,
+                    "recepteur": 252
+                },
+                {
+                    "station": 34,
+                    "emetteur": 252,
+                    "recepteur": 14
+                },
+                {
+                    "station": 35,
+                    "emetteur": 14,
+                    "recepteur": 252
+                },
+                {
+                    "station": 36,
+                    "emetteur": 266,
+                    "recepteur": 28
+                },
+                {
+                    "station": 37,
+                    "emetteur": 294,
+                    "recepteur": 56
+                },
+                {
+                    "station": 38,
+                    "emetteur": 14,
+                    "recepteur": 252
+                },
+                {
+                    "station": 39,
+                    "emetteur": 252,
+                    "recepteur": 14
+                },
+                {
+                    "station": 40,
+                    "emetteur": 56,
+                    "recepteur": 294
+                },
+                {
+                    "station": 41,
+                    "emetteur": 14,
+                    "recepteur": 252
+                },
+                {
+                    "station": 42,
+                    "emetteur": 56,
+                    "recepteur": 294
+                },
+                {
+                    "station": 43,
+                    "emetteur": 56,
+                    "recepteur": 294
+                },
+                {
+                    "station": 44,
+                    "emetteur": 252,
+                    "recepteur": 14
+                },
+                {
+                    "station": 45,
+                    "emetteur": 266,
+                    "recepteur": 28
+                },
+                {
+                    "station": 46,
+                    "emetteur": 294,
+                    "recepteur": 56
+                },
+                {
+                    "station": 47,
+                    "emetteur": 252,
+                    "recepteur": 14
+                },
+                {
+                    "station": 48,
+                    "emetteur": 14,
+                    "recepteur": 252
+                },
+                {
+                    "station": 49,
+                    "emetteur": 252,
+                    "recepteur": 14
+                }
+            ]
+        },
+        "Choco": {
+            "temps": 0.11620688438415527,
+            "nombre_stations": 50,
+            "stations": [
+                {
+                    "station": 0,
+                    "emetteur": 56,
+                    "recepteur": 294
+                },
+                {
+                    "station": 1,
+                    "emetteur": 252,
+                    "recepteur": 14
+                },
+                {
+                    "station": 2,
+                    "emetteur": 14,
+                    "recepteur": 252
+                },
+                {
+                    "station": 3,
+                    "emetteur": 14,
+                    "recepteur": 252
+                },
+                {
+                    "station": 4,
+                    "emetteur": 28,
+                    "recepteur": 266
+                },
+                {
+                    "station": 5,
+                    "emetteur": 252,
+                    "recepteur": 14
+                },
+                {
+                    "station": 6,
+                    "emetteur": 252,
+                    "recepteur": 14
+                },
+                {
+                    "station": 7,
+                    "emetteur": 252,
+                    "recepteur": 14
+                },
+                {
+                    "station": 8,
+                    "emetteur": 28,
+                    "recepteur": 266
+                },
+                {
+                    "station": 9,
+                    "emetteur": 14,
+                    "recepteur": 252
+                },
+                {
+                    "station": 10,
+                    "emetteur": 14,
+                    "recepteur": 252
+                },
+                {
+                    "station": 11,
+                    "emetteur": 56,
+                    "recepteur": 294
+                },
+                {
+                    "station": 12,
+                    "emetteur": 294,
+                    "recepteur": 56
+                },
+                {
+                    "station": 13,
+                    "emetteur": 42,
+                    "recepteur": 280
+                },
+                {
+                    "station": 14,
+                    "emetteur": 14,
+                    "recepteur": 252
+                },
+                {
+                    "station": 15,
+                    "emetteur": 14,
+                    "recepteur": 252
+                },
+                {
+                    "station": 16,
+                    "emetteur": 56,
+                    "recepteur": 294
+                },
+                {
+                    "station": 17,
+                    "emetteur": 42,
+                    "recepteur": 280
+                },
+                {
+                    "station": 18,
+                    "emetteur": 14,
+                    "recepteur": 252
+                },
+                {
+                    "station": 19,
+                    "emetteur": 56,
+                    "recepteur": 294
+                },
+                {
+                    "station": 20,
+                    "emetteur": 56,
+                    "recepteur": 294
+                },
+                {
+                    "station": 21,
+                    "emetteur": 56,
+                    "recepteur": 294
+                },
+                {
+                    "station": 22,
+                    "emetteur": 28,
+                    "recepteur": 266
+                },
+                {
+                    "station": 23,
+                    "emetteur": 42,
+                    "recepteur": 280
+                },
+                {
+                    "station": 24,
+                    "emetteur": 294,
+                    "recepteur": 56
+                },
+                {
+                    "station": 25,
+                    "emetteur": 280,
+                    "recepteur": 42
+                },
+                {
+                    "station": 26,
+                    "emetteur": 252,
+                    "recepteur": 14
+                },
+                {
+                    "station": 27,
+                    "emetteur": 252,
+                    "recepteur": 14
+                },
+                {
+                    "station": 28,
+                    "emetteur": 14,
+                    "recepteur": 252
+                },
+                {
+                    "station": 29,
+                    "emetteur": 14,
+                    "recepteur": 252
+                },
+                {
+                    "station": 30,
+                    "emetteur": 14,
+                    "recepteur": 252
+                },
+                {
+                    "station": 31,
+                    "emetteur": 14,
+                    "recepteur": 252
+                },
+                {
+                    "station": 32,
+                    "emetteur": 14,
+                    "recepteur": 252
+                },
+                {
+                    "station": 33,
+                    "emetteur": 14,
+                    "recepteur": 252
+                },
+                {
+                    "station": 34,
+                    "emetteur": 252,
+                    "recepteur": 14
+                },
+                {
+                    "station": 35,
+                    "emetteur": 14,
+                    "recepteur": 252
+                },
+                {
+                    "station": 36,
+                    "emetteur": 266,
+                    "recepteur": 28
+                },
+                {
+                    "station": 37,
+                    "emetteur": 294,
+                    "recepteur": 56
+                },
+                {
+                    "station": 38,
+                    "emetteur": 14,
+                    "recepteur": 252
+                },
+                {
+                    "station": 39,
+                    "emetteur": 252,
+                    "recepteur": 14
+                },
+                {
+                    "station": 40,
+                    "emetteur": 56,
+                    "recepteur": 294
+                },
+                {
+                    "station": 41,
+                    "emetteur": 14,
+                    "recepteur": 252
+                },
+                {
+                    "station": 42,
+                    "emetteur": 56,
+                    "recepteur": 294
+                },
+                {
+                    "station": 43,
+                    "emetteur": 56,
+                    "recepteur": 294
+                },
+                {
+                    "station": 44,
+                    "emetteur": 252,
+                    "recepteur": 14
+                },
+                {
+                    "station": 45,
+                    "emetteur": 266,
+                    "recepteur": 28
+                },
+                {
+                    "station": 46,
+                    "emetteur": 294,
+                    "recepteur": 56
+                },
+                {
+                    "station": 47,
+                    "emetteur": 252,
+                    "recepteur": 14
+                },
+                {
+                    "station": 48,
+                    "emetteur": 14,
+                    "recepteur": 252
+                },
+                {
+                    "station": 49,
+                    "emetteur": 252,
+                    "recepteur": 14
+                }
+            ]
+        }
+    }
+}

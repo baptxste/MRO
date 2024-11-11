@@ -1,0 +1,30 @@
+    <instance format="XCSP3" type="CSP">
+    <variables>
+        <array id="fe" note="Variables pour les fréquences d'émission et de réception pour chaque station" size="[3]">
+        <domain for="fe[0] fe[1]"> 14 28 42 56 70 84 98 112 126 140 154 168 182 196 </domain>
+        <domain for="fe[2]"> 14 28 42 56 70 84 98 112 126 140 154 168 196 </domain>
+        </array>
+        <array id="fr" size="[3]">
+        <domain for="fr[0]"> 14 28 42 56 70 126 140 154 182 196 </domain>
+        <domain for="fr[1]"> 14 28 42 56 70 98 140 154 168 182 196 </domain>
+        <domain for="fr[2]"> 14 28 42 56 70 84 98 112 126 140 154 168 182 196 </domain>
+        </array>
+    </variables>
+    <constraints>
+        <intension> eq(dist(fe[0],fr[0]),140) </intension>
+        <intension> eq(dist(fe[1],fr[1]),140) </intension>
+        <intension> eq(dist(fe[2],fr[2]),140) </intension>
+        <intension> ge(dist(fe[0],fe[1]),20) </intension>
+        <intension> ge(dist(fr[0],fr[1]),20) </intension>
+        <intension> ge(dist(fe[0],fe[2]),30) </intension>
+        <intension> ge(dist(fr[0],fr[2]),30) </intension>
+        <nValues>
+        <list> fe[0] fr[0] </list>
+        <condition> (le,2) </condition>
+        </nValues>
+        <nValues>
+        <list> fe[1] fe[2] fr[1] fr[2] </list>
+        <condition> (le,3) </condition>
+        </nValues>
+    </constraints>
+    </instance>

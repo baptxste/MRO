@@ -1,5 +1,6 @@
 \documentclass[12pt]{article}
 
+\usepackage{minted}
 \usepackage[utf8]{inputenc}
 \usepackage{url}
 \usepackage{latexsym,amsfonts,amssymb,amsthm,amsmath}
@@ -25,8 +26,8 @@
 \vspace{0.5in}
 
 
-\subsection*{Problèmes d'optimisation sous contraintes}
-
+\section{Problèmes d'optimisation sous contraintes}
+\subsection{Modélisation du problème }
 \begin{enumerate}[(i)]
     \item 
     \begin{flalign*}
@@ -47,5 +48,72 @@
     \end{itemize}
 
 \end{enumerate}
+
+\subsection{Instance XCSP3}
+Le code COP.py (cf annexe) nous permet de générer une instance XCSP3 à partir de nos données. Ainsi partant du jeu de données data.json suivant : 
+\begin{minted}{json}
+    {
+        "stations": [
+                { "num":  0, "region":  0, "delta": 140, "emetteur": [ 14, 28, 42, 56, 70, 84, 98, 112, 126, 140, 154, 168, 182, 196 ], "recepteur": [ 14, 28, 42, 56, 70, 126, 140, 154, 182, 196 ] },
+                { "num":  1, "region":  1, "delta": 140, "emetteur": [ 14, 28, 42, 56, 70, 84, 98, 112, 126, 140, 154, 168, 182, 196 ], "recepteur": [ 14, 28, 42, 56, 70, 98, 140, 154, 168, 182, 196 ] },
+                { "num":  2, "region":  1, "delta": 140, "emetteur": [ 14, 28, 42, 56, 70, 84, 98, 112, 126, 140, 154, 168, 196 ], "recepteur": [ 14, 28, 42, 56, 70, 84, 98, 112, 126, 140, 154, 168, 182, 196 ] }
+        ],
+        "regions": [2, 3],
+        "interferences": [
+                { "x": 0, "y": 1, "Delta": 20 },
+                { "x": 0, "y": 2, "Delta": 30 }
+        ],
+        "liaisons": [
+                { "x": 1, "y": 2 }
+        ]
+    }
+\end{minted}
+
+Nous obtenons l'instance XCSP3 suivante : 
+\begin{minted}{xml}
+    <instance format="XCSP3" type="CSP">
+    <variables>
+        <array id="fe" note="Variables pour les fréquences d'émission et de réception pour chaque station" size="[3]">
+        <domain for="fe[0] fe[1]"> 14 28 42 56 70 84 98 112 126 140 154 168 182 196 </domain>
+        <domain for="fe[2]"> 14 28 42 56 70 84 98 112 126 140 154 168 196 </domain>
+        </array>
+        <array id="fr" size="[3]">
+        <domain for="fr[0]"> 14 28 42 56 70 126 140 154 182 196 </domain>
+        <domain for="fr[1]"> 14 28 42 56 70 98 140 154 168 182 196 </domain>
+        <domain for="fr[2]"> 14 28 42 56 70 84 98 112 126 140 154 168 182 196 </domain>
+        </array>
+    </variables>
+    <constraints>
+        <intension> eq(dist(fe[0],fr[0]),140) </intension>
+        <intension> eq(dist(fe[1],fr[1]),140) </intension>
+        <intension> eq(dist(fe[2],fr[2]),140) </intension>
+        <intension> ge(dist(fe[0],fe[1]),20) </intension>
+        <intension> ge(dist(fr[0],fr[1]),20) </intension>
+        <intension> ge(dist(fe[0],fe[2]),30) </intension>
+        <intension> ge(dist(fr[0],fr[2]),30) </intension>
+        <nValues>
+        <list> fe[0] fr[0] </list>
+        <condition> (le,2) </condition>
+        </nValues>
+        <nValues>
+        <list> fe[1] fe[2] fr[1] fr[2] </list>
+        <condition> (le,3) </condition>
+        </nValues>
+    </constraints>
+    </instance>
+\end{minted}
+
+\subsection{Comparaison des différents solveurs}
+Dans cette partie nous allons évaluer les performances des différents solveurs suivants : 
+"Choco", "MiniZinc", "Gecode", "CBC" et "Google OR-Tools". Ces évaluations seront basées sur une comparaison du temps d'exécution ainsi
+que sur une mesure de performance que nous expliciterons dans la partie dédiée.
+\subsubsection{Comparaison en temps}
+\subsubsection{Comparaion des performances}
+
+
+\section{Problèmes de satisfaction de contraintes valuées}
+\subsection{Modélisation du problème }
+\subsection{Instance WSCP}
+\subsection{Résolution avec le solveur Toulbar2}
 
 \end{document}
