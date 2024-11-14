@@ -1,7 +1,5 @@
 Date de rendu du projet : dernière séance de MRO.
 
-https://datascientest.com/nlp-word-embedding-word2vec
-
 
 Le code COP.py fonctionne, le script run.sh permet de le faire tourner sur tous les fichiers d'entraînement
 ( on ne peut pas le faire directement dans le script python ca pause un problème avec les variables déjà enregistrées en mémoire, il faut relancer python à chaque fois). 
