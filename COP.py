@@ -85,6 +85,12 @@ for r, max_freqs in enumerate(data["regions"]):
     if region_stations:
         satisfy(NValues([fe[i] for i in region_stations] + [fr[i] for i in region_stations]) <= max_freqs)
 
+# 4. Contraintes sur les liaisons entre les stations
+for liaison in data["liaisons"]:
+    x, y = liaison["x"], liaison["y"]
+    satisfy(fe[x] == fe[y])
+    satisfy(fr[x] == fr[y])
+
 
 # choix de la contrainte
 if objectif==1:
@@ -137,7 +143,6 @@ for solver in solvers:
     # déplacer l'instance xml
     os.makedirs("solver_file", exist_ok=True)
     source_xml = "test.xml"  # Nom du fichier XML généré par défaut
-    output_file= f"solver_file/instance_{file_name.split('.json')[0]}_{objectif}
-     .xml"
+    output_file= f"solver_file/instance_{file_name.split('.json')[0]}_{objectif}.xml"
     shutil.move(source_xml, output_file)
 
