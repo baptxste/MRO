@@ -1,3 +1,6 @@
+# JUST AN EXAMPLE FILE
+# FEEL FREE TO DELETE
+
 import sys
 from random import seed, randint
 seed(123456789)
