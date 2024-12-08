@@ -34,7 +34,7 @@
     \item Variables et définitions :
     \begin{flalign*}
         & x_{ij} := \text{Fréquence entre la station $i$ et la station $j$}, && \\
-        & t_i := \text{Région associée à la station $i$}, && \\
+        & r_i := \text{Région associée à la station $i$}, && \\
         & X = \{x_{11}, \dotsc, x_{nn}\} \cup \{r_1, \dotsc, r_n\}, && \\
         & D = \{d_{x_{11}}, \dotsc, d_{x_{nn}}\} \cup \{d_{r_1}, \dotsc, d_{r_n}\}, \\
         & \quad \text{avec pour tout $i, j$ : } d_{x_{ij}} = \mathbb{N}, \; d_{r_i} = \{1, \dotsc, k\}, && \\
@@ -207,7 +207,38 @@ Pour conclure cette première partie dédiée à la résolution de problèmes so
 \end{enumerate}
 
 \section{Problèmes de satisfaction de contraintes valuées}
+
 \subsection{Modélisation du problème }
+
+\begin{enumerate}
+    \item Variables et définitions :
+    \begin{flalign*}
+        & x_{ij} := \text{Fréquence entre la station $i$ et la station $j$}, && \\
+        & r_i := \text{Région associée à la station $i$}, && \\
+        & X = \{x_{11}, \dotsc, x_{nn}\} \cup \{r_1, \dotsc, r_n\}, && \\
+        & D = \{d_{x_{11}}, \dotsc, d_{x_{nn}}\} \cup \{d_{r_1}, \dotsc, d_{r_n}\}, \\
+        & \quad \text{avec pour tout $i, j$ : } d_{x_{ij}} = \mathbb{N}, \; d_{r_i} = \{1, \dotsc, k\}, && \\
+    \end{flalign*}
+
+    \item Les contraintes restent les mêmes, avec les pondérations suivantes :
+    \begin{flalign*}
+        & \{\forall i \in \{1, \dotsc, n\}, \exists j, k \neq i \Rightarrow \delta_i = |x_{ij} - x_{ji}\} && \\
+        & \rightarrow \text{Poids } |\delta_i - |x_{ij} - x_{ji}|| \text{ si contrainte violée, 0 sinon} && \\
+        & \{\forall x_{ij} \in X, \exists k \neq i, l \neq j \Rightarrow |x{ij} - x{jl| \geq \Delta_{ij}, \; |x_{ij} - x_{ki}< \geq \Delta_{ij}}\} && \\
+        & \rightarrow \text{Poids } +\inf \text{ si contrainte violée, 0 sinon}
+    \end{flalign*}
+    
+    \item Fonction(s) objectif :
+    \begin{itemize}
+        \item $\text{Minimiser } |X|$ \\
+        On cherche à minimiser le nombre de fréquences utilisées.
+        \item $\underset{x_i \in X}{\text{minimiser }} x_i$ \\
+        On cherche à utiliser les fréquences les plus petites possibles.
+        \item $\text{Minimiser } \left( \underset{x_i \in X}{\text{max }} x_i - \underset{x_i \in X}{\text{min }} x_i \right)$ \\
+        On cherche à minimiser la bande passante utilisée. 
+    \end{itemize}
+\end{enumerate}
+
 \subsection{Instance WSCP}
 \subsection{Résolution avec le solveur Toulbar2}
 
