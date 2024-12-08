@@ -84,7 +84,7 @@ for i, station in enumerate(stations):
             if d == delta_i:
                 ListConstraints.append(0)
             else:
-                ListConstraints.append(delta_i - d)
+                ListConstraints.append(abs(delta_i - d))
 
     Problem.AddFunction([f"fe_{i}", f"fr_{i}"], ListConstraints)
 
