@@ -1,0 +1,43 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{err}{\PYGZlt{}i}\PYG{k+kc}{nstan}\PYG{err}{ce}\PYG{+w}{ }\PYG{k+kc}{f}\PYG{err}{orma}\PYG{k+kc}{t}\PYG{err}{=}\PYG{l+s+s2}{\PYGZdq{}XCSP3\PYGZdq{}}\PYG{+w}{ }\PYG{k+kc}{t}\PYG{err}{ype=}\PYG{l+s+s2}{\PYGZdq{}CSP\PYGZdq{}}\PYG{err}{\PYGZgt{}}
+\PYG{+w}{    }\PYG{err}{\PYGZlt{}variables\PYGZgt{}}
+\PYG{+w}{        }\PYG{err}{\PYGZlt{}array}\PYG{+w}{ }\PYG{err}{id=}\PYG{l+s+s2}{\PYGZdq{}fe\PYGZdq{}}\PYG{+w}{ }\PYG{k+kc}{n}\PYG{err}{o}\PYG{k+kc}{te}\PYG{err}{=}\PYG{l+s+s2}{\PYGZdq{}Variables pour les fréquences d\PYGZsq{}émission}
+\PYG{l+s+s2}{        et de réception pour chaque station\PYGZdq{}}\PYG{+w}{ }\PYG{err}{size=}\PYG{l+s+s2}{\PYGZdq{}[3]\PYGZdq{}}\PYG{err}{\PYGZgt{}}
+\PYG{+w}{            }\PYG{err}{\PYGZlt{}domai}\PYG{k+kc}{n}\PYG{+w}{ }\PYG{k+kc}{f}\PYG{err}{or=}\PYG{l+s+s2}{\PYGZdq{}fe[0] fe[1]\PYGZdq{}}\PYG{err}{\PYGZgt{}}
+\PYG{+w}{                }\PYG{l+m+mi}{14}\PYG{+w}{ }\PYG{l+m+mi}{28}\PYG{+w}{ }\PYG{l+m+mi}{42}\PYG{+w}{ }\PYG{l+m+mi}{56}\PYG{+w}{ }\PYG{l+m+mi}{70}\PYG{+w}{ }\PYG{l+m+mi}{84}\PYG{+w}{ }\PYG{l+m+mi}{98}\PYG{+w}{ }\PYG{l+m+mi}{112}\PYG{+w}{ }\PYG{l+m+mi}{126}\PYG{+w}{ }\PYG{l+m+mi}{140}\PYG{+w}{ }\PYG{l+m+mi}{154}\PYG{+w}{ }\PYG{l+m+mi}{168}\PYG{+w}{ }\PYG{l+m+mi}{182}\PYG{+w}{ }\PYG{l+m+mi}{196}
+\PYG{+w}{            }\PYG{err}{\PYGZlt{}/domai}\PYG{k+kc}{n}\PYG{err}{\PYGZgt{}}
+\PYG{+w}{            }\PYG{err}{\PYGZlt{}domai}\PYG{k+kc}{n}\PYG{+w}{ }\PYG{k+kc}{f}\PYG{err}{or=}\PYG{l+s+s2}{\PYGZdq{}fe[2]\PYGZdq{}}\PYG{err}{\PYGZgt{}}
+\PYG{+w}{                }\PYG{l+m+mi}{14}\PYG{+w}{ }\PYG{l+m+mi}{28}\PYG{+w}{ }\PYG{l+m+mi}{42}\PYG{+w}{ }\PYG{l+m+mi}{56}\PYG{+w}{ }\PYG{l+m+mi}{70}\PYG{+w}{ }\PYG{l+m+mi}{84}\PYG{+w}{ }\PYG{l+m+mi}{98}\PYG{+w}{ }\PYG{l+m+mi}{112}\PYG{+w}{ }\PYG{l+m+mi}{126}\PYG{+w}{ }\PYG{l+m+mi}{140}\PYG{+w}{ }\PYG{l+m+mi}{154}\PYG{+w}{ }\PYG{l+m+mi}{168}\PYG{+w}{ }\PYG{l+m+mi}{196}
+\PYG{+w}{            }\PYG{err}{\PYGZlt{}/domai}\PYG{k+kc}{n}\PYG{err}{\PYGZgt{}}
+\PYG{+w}{        }\PYG{err}{\PYGZlt{}/array\PYGZgt{}}
+\PYG{+w}{        }\PYG{err}{\PYGZlt{}array}\PYG{+w}{ }\PYG{err}{id=}\PYG{l+s+s2}{\PYGZdq{}fr\PYGZdq{}}\PYG{+w}{ }\PYG{err}{size=}\PYG{l+s+s2}{\PYGZdq{}[3]\PYGZdq{}}\PYG{err}{\PYGZgt{}}
+\PYG{+w}{            }\PYG{err}{\PYGZlt{}domai}\PYG{k+kc}{n}\PYG{+w}{ }\PYG{k+kc}{f}\PYG{err}{or=}\PYG{l+s+s2}{\PYGZdq{}fr[0]\PYGZdq{}}\PYG{err}{\PYGZgt{}}
+\PYG{+w}{                }\PYG{l+m+mi}{14}\PYG{+w}{ }\PYG{l+m+mi}{28}\PYG{+w}{ }\PYG{l+m+mi}{42}\PYG{+w}{ }\PYG{l+m+mi}{56}\PYG{+w}{ }\PYG{l+m+mi}{70}\PYG{+w}{ }\PYG{l+m+mi}{126}\PYG{+w}{ }\PYG{l+m+mi}{140}\PYG{+w}{ }\PYG{l+m+mi}{154}\PYG{+w}{ }\PYG{l+m+mi}{182}\PYG{+w}{ }\PYG{l+m+mi}{196}
+\PYG{+w}{            }\PYG{err}{\PYGZlt{}/domai}\PYG{k+kc}{n}\PYG{err}{\PYGZgt{}}
+\PYG{+w}{            }\PYG{err}{\PYGZlt{}domai}\PYG{k+kc}{n}\PYG{+w}{ }\PYG{k+kc}{f}\PYG{err}{or=}\PYG{l+s+s2}{\PYGZdq{}fr[1]\PYGZdq{}}\PYG{err}{\PYGZgt{}}
+\PYG{+w}{                }\PYG{l+m+mi}{14}\PYG{+w}{ }\PYG{l+m+mi}{28}\PYG{+w}{ }\PYG{l+m+mi}{42}\PYG{+w}{ }\PYG{l+m+mi}{56}\PYG{+w}{ }\PYG{l+m+mi}{70}\PYG{+w}{ }\PYG{l+m+mi}{98}\PYG{+w}{ }\PYG{l+m+mi}{140}\PYG{+w}{ }\PYG{l+m+mi}{154}\PYG{+w}{ }\PYG{l+m+mi}{168}\PYG{+w}{ }\PYG{l+m+mi}{182}\PYG{+w}{ }\PYG{l+m+mi}{196}
+\PYG{+w}{            }\PYG{err}{\PYGZlt{}/domai}\PYG{k+kc}{n}\PYG{err}{\PYGZgt{}}
+\PYG{+w}{            }\PYG{err}{\PYGZlt{}domai}\PYG{k+kc}{n}\PYG{+w}{ }\PYG{k+kc}{f}\PYG{err}{or=}\PYG{l+s+s2}{\PYGZdq{}fr[2]\PYGZdq{}}\PYG{err}{\PYGZgt{}}
+\PYG{+w}{                }\PYG{l+m+mi}{14}\PYG{+w}{ }\PYG{l+m+mi}{28}\PYG{+w}{ }\PYG{l+m+mi}{42}\PYG{+w}{ }\PYG{l+m+mi}{56}\PYG{+w}{ }\PYG{l+m+mi}{70}\PYG{+w}{ }\PYG{l+m+mi}{84}\PYG{+w}{ }\PYG{l+m+mi}{98}\PYG{+w}{ }\PYG{l+m+mi}{112}\PYG{+w}{ }\PYG{l+m+mi}{126}\PYG{+w}{ }\PYG{l+m+mi}{140}\PYG{+w}{ }\PYG{l+m+mi}{154}\PYG{+w}{ }\PYG{l+m+mi}{168}\PYG{+w}{ }\PYG{l+m+mi}{182}\PYG{+w}{ }\PYG{l+m+mi}{196}
+\PYG{+w}{            }\PYG{err}{\PYGZlt{}/domai}\PYG{k+kc}{n}\PYG{err}{\PYGZgt{}}
+\PYG{+w}{        }\PYG{err}{\PYGZlt{}/array\PYGZgt{}}
+\PYG{+w}{    }\PYG{err}{\PYGZlt{}/variables\PYGZgt{}}
+\PYG{+w}{    }\PYG{err}{\PYGZlt{}co}\PYG{k+kc}{nstra}\PYG{err}{i}\PYG{k+kc}{nts}\PYG{err}{\PYGZgt{}}
+\PYG{+w}{        }\PYG{err}{\PYGZlt{}i}\PYG{k+kc}{ntens}\PYG{err}{io}\PYG{k+kc}{n}\PYG{err}{\PYGZgt{}}\PYG{+w}{ }\PYG{err}{eq(dis}\PYG{k+kc}{t}\PYG{err}{(}\PYG{k+kc}{fe}\PYG{p}{[}\PYG{l+m+mi}{0}\PYG{p}{],}\PYG{k+kc}{fr}\PYG{p}{[}\PYG{l+m+mi}{0}\PYG{p}{]}\PYG{err}{)}\PYG{p}{,}\PYG{l+m+mi}{140}\PYG{err}{)}\PYG{+w}{ }\PYG{err}{\PYGZlt{}/i}\PYG{k+kc}{ntens}\PYG{err}{io}\PYG{k+kc}{n}\PYG{err}{\PYGZgt{}}
+\PYG{+w}{        }\PYG{err}{\PYGZlt{}i}\PYG{k+kc}{ntens}\PYG{err}{io}\PYG{k+kc}{n}\PYG{err}{\PYGZgt{}}\PYG{+w}{ }\PYG{err}{eq(dis}\PYG{k+kc}{t}\PYG{err}{(}\PYG{k+kc}{fe}\PYG{p}{[}\PYG{l+m+mi}{1}\PYG{p}{],}\PYG{k+kc}{fr}\PYG{p}{[}\PYG{l+m+mi}{1}\PYG{p}{]}\PYG{err}{)}\PYG{p}{,}\PYG{l+m+mi}{140}\PYG{err}{)}\PYG{+w}{ }\PYG{err}{\PYGZlt{}/i}\PYG{k+kc}{ntens}\PYG{err}{io}\PYG{k+kc}{n}\PYG{err}{\PYGZgt{}}
+\PYG{+w}{        }\PYG{err}{\PYGZlt{}i}\PYG{k+kc}{ntens}\PYG{err}{io}\PYG{k+kc}{n}\PYG{err}{\PYGZgt{}}\PYG{+w}{ }\PYG{err}{eq(dis}\PYG{k+kc}{t}\PYG{err}{(}\PYG{k+kc}{fe}\PYG{p}{[}\PYG{l+m+mi}{2}\PYG{p}{],}\PYG{k+kc}{fr}\PYG{p}{[}\PYG{l+m+mi}{2}\PYG{p}{]}\PYG{err}{)}\PYG{p}{,}\PYG{l+m+mi}{140}\PYG{err}{)}\PYG{+w}{ }\PYG{err}{\PYGZlt{}/i}\PYG{k+kc}{ntens}\PYG{err}{io}\PYG{k+kc}{n}\PYG{err}{\PYGZgt{}}
+\PYG{+w}{        }\PYG{err}{\PYGZlt{}i}\PYG{k+kc}{ntens}\PYG{err}{io}\PYG{k+kc}{n}\PYG{err}{\PYGZgt{}}\PYG{+w}{ }\PYG{err}{ge(dis}\PYG{k+kc}{t}\PYG{err}{(}\PYG{k+kc}{fe}\PYG{p}{[}\PYG{l+m+mi}{0}\PYG{p}{],}\PYG{k+kc}{fe}\PYG{p}{[}\PYG{l+m+mi}{1}\PYG{p}{]}\PYG{err}{)}\PYG{p}{,}\PYG{l+m+mi}{20}\PYG{err}{)}\PYG{+w}{ }\PYG{err}{\PYGZlt{}/i}\PYG{k+kc}{ntens}\PYG{err}{io}\PYG{k+kc}{n}\PYG{err}{\PYGZgt{}}
+\PYG{+w}{        }\PYG{err}{\PYGZlt{}i}\PYG{k+kc}{ntens}\PYG{err}{io}\PYG{k+kc}{n}\PYG{err}{\PYGZgt{}}\PYG{+w}{ }\PYG{err}{ge(dis}\PYG{k+kc}{t}\PYG{err}{(}\PYG{k+kc}{fr}\PYG{p}{[}\PYG{l+m+mi}{0}\PYG{p}{],}\PYG{k+kc}{fr}\PYG{p}{[}\PYG{l+m+mi}{1}\PYG{p}{]}\PYG{err}{)}\PYG{p}{,}\PYG{l+m+mi}{20}\PYG{err}{)}\PYG{+w}{ }\PYG{err}{\PYGZlt{}/i}\PYG{k+kc}{ntens}\PYG{err}{io}\PYG{k+kc}{n}\PYG{err}{\PYGZgt{}}
+\PYG{+w}{        }\PYG{err}{\PYGZlt{}i}\PYG{k+kc}{ntens}\PYG{err}{io}\PYG{k+kc}{n}\PYG{err}{\PYGZgt{}}\PYG{+w}{ }\PYG{err}{ge(dis}\PYG{k+kc}{t}\PYG{err}{(}\PYG{k+kc}{fe}\PYG{p}{[}\PYG{l+m+mi}{0}\PYG{p}{],}\PYG{k+kc}{fe}\PYG{p}{[}\PYG{l+m+mi}{2}\PYG{p}{]}\PYG{err}{)}\PYG{p}{,}\PYG{l+m+mi}{30}\PYG{err}{)}\PYG{+w}{ }\PYG{err}{\PYGZlt{}/i}\PYG{k+kc}{ntens}\PYG{err}{io}\PYG{k+kc}{n}\PYG{err}{\PYGZgt{}}
+\PYG{+w}{        }\PYG{err}{\PYGZlt{}i}\PYG{k+kc}{ntens}\PYG{err}{io}\PYG{k+kc}{n}\PYG{err}{\PYGZgt{}}\PYG{+w}{ }\PYG{err}{ge(dis}\PYG{k+kc}{t}\PYG{err}{(}\PYG{k+kc}{fr}\PYG{p}{[}\PYG{l+m+mi}{0}\PYG{p}{],}\PYG{k+kc}{fr}\PYG{p}{[}\PYG{l+m+mi}{2}\PYG{p}{]}\PYG{err}{)}\PYG{p}{,}\PYG{l+m+mi}{30}\PYG{err}{)}\PYG{+w}{ }\PYG{err}{\PYGZlt{}/i}\PYG{k+kc}{ntens}\PYG{err}{io}\PYG{k+kc}{n}\PYG{err}{\PYGZgt{}}
+\PYG{+w}{        }\PYG{err}{\PYGZlt{}}\PYG{k+kc}{n}\PYG{err}{Values\PYGZgt{}}
+\PYG{+w}{            }\PYG{err}{\PYGZlt{}lis}\PYG{k+kc}{t}\PYG{err}{\PYGZgt{}}\PYG{+w}{ }\PYG{k+kc}{fe}\PYG{p}{[}\PYG{l+m+mi}{0}\PYG{p}{]}\PYG{+w}{ }\PYG{k+kc}{fr}\PYG{p}{[}\PYG{l+m+mi}{0}\PYG{p}{]}\PYG{+w}{ }\PYG{err}{\PYGZlt{}/lis}\PYG{k+kc}{t}\PYG{err}{\PYGZgt{}}
+\PYG{+w}{            }\PYG{err}{\PYGZlt{}co}\PYG{k+kc}{n}\PYG{err}{di}\PYG{k+kc}{t}\PYG{err}{io}\PYG{k+kc}{n}\PYG{err}{\PYGZgt{}}\PYG{+w}{ }\PYG{err}{(le}\PYG{p}{,}\PYG{l+m+mi}{2}\PYG{err}{)}\PYG{+w}{ }\PYG{err}{\PYGZlt{}/co}\PYG{k+kc}{n}\PYG{err}{di}\PYG{k+kc}{t}\PYG{err}{io}\PYG{k+kc}{n}\PYG{err}{\PYGZgt{}}
+\PYG{+w}{        }\PYG{err}{\PYGZlt{}/}\PYG{k+kc}{n}\PYG{err}{Values\PYGZgt{}}
+\PYG{+w}{        }\PYG{err}{\PYGZlt{}}\PYG{k+kc}{n}\PYG{err}{Values\PYGZgt{}}
+\PYG{+w}{            }\PYG{err}{\PYGZlt{}lis}\PYG{k+kc}{t}\PYG{err}{\PYGZgt{}}\PYG{+w}{ }\PYG{k+kc}{fe}\PYG{p}{[}\PYG{l+m+mi}{1}\PYG{p}{]}\PYG{+w}{ }\PYG{k+kc}{fe}\PYG{p}{[}\PYG{l+m+mi}{2}\PYG{p}{]}\PYG{+w}{ }\PYG{k+kc}{fr}\PYG{p}{[}\PYG{l+m+mi}{1}\PYG{p}{]}\PYG{+w}{ }\PYG{k+kc}{fr}\PYG{p}{[}\PYG{l+m+mi}{2}\PYG{p}{]}\PYG{+w}{ }\PYG{err}{\PYGZlt{}/lis}\PYG{k+kc}{t}\PYG{err}{\PYGZgt{}}
+\PYG{+w}{            }\PYG{err}{\PYGZlt{}co}\PYG{k+kc}{n}\PYG{err}{di}\PYG{k+kc}{t}\PYG{err}{io}\PYG{k+kc}{n}\PYG{err}{\PYGZgt{}}\PYG{+w}{ }\PYG{err}{(le}\PYG{p}{,}\PYG{l+m+mi}{3}\PYG{err}{)}\PYG{+w}{ }\PYG{err}{\PYGZlt{}/co}\PYG{k+kc}{n}\PYG{err}{di}\PYG{k+kc}{t}\PYG{err}{io}\PYG{k+kc}{n}\PYG{err}{\PYGZgt{}}
+\PYG{+w}{        }\PYG{err}{\PYGZlt{}/}\PYG{k+kc}{n}\PYG{err}{Values\PYGZgt{}}
+\PYG{+w}{    }\PYG{err}{\PYGZlt{}/co}\PYG{k+kc}{nstra}\PYG{err}{i}\PYG{k+kc}{nts}\PYG{err}{\PYGZgt{}}
+\PYG{err}{\PYGZlt{}/i}\PYG{k+kc}{nstan}\PYG{err}{ce\PYGZgt{}}
+\end{Verbatim}

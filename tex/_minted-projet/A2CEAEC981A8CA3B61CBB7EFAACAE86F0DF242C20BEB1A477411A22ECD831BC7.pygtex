@@ -1,0 +1,19 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{n+nt}{\PYGZlt{}instance}\PYG{+w}{ }\PYG{n+na}{format=}\PYG{l+s}{\PYGZdq{}XCSP3\PYGZdq{}}\PYG{+w}{ }\PYG{n+na}{type=}\PYG{l+s}{\PYGZdq{}CSP\PYGZdq{}}\PYG{n+nt}{\PYGZgt{}}
+\PYG{+w}{  }\PYG{n+nt}{\PYGZlt{}variables\PYGZgt{}}
+\PYG{+w}{    }\PYG{n+nt}{\PYGZlt{}array}\PYG{+w}{ }\PYG{n+na}{id=}\PYG{l+s}{\PYGZdq{}fe\PYGZdq{}}\PYG{+w}{ }\PYG{n+na}{note=}\PYG{l+s}{\PYGZdq{}Variables pour les fréquences d\PYGZsq{}émission et de réception pour chaque station\PYGZdq{}}\PYG{+w}{ }\PYG{n+na}{size=}\PYG{l+s}{\PYGZdq{}[3]\PYGZdq{}}\PYG{n+nt}{\PYGZgt{}}
+\PYG{+w}{      }\PYG{n+nt}{\PYGZlt{}domain}\PYG{+w}{ }\PYG{n+na}{for=}\PYG{l+s}{\PYGZdq{}fe[0] fe[1]\PYGZdq{}}\PYG{n+nt}{\PYGZgt{}}\PYG{+w}{ }14\PYG{+w}{ }28\PYG{+w}{ }42\PYG{+w}{ }56\PYG{+w}{ }70\PYG{+w}{ }84\PYG{+w}{ }98\PYG{+w}{ }112\PYG{+w}{ }126\PYG{+w}{ }140\PYG{+w}{ }154\PYG{+w}{ }168\PYG{+w}{ }182\PYG{+w}{ }196\PYG{+w}{ }\PYG{n+nt}{\PYGZlt{}/domain\PYGZgt{}}
+\PYG{+w}{      }\PYG{n+nt}{\PYGZlt{}domain}\PYG{+w}{ }\PYG{n+na}{for=}\PYG{l+s}{\PYGZdq{}fe[2]\PYGZdq{}}\PYG{n+nt}{\PYGZgt{}}\PYG{+w}{ }14\PYG{+w}{ }28\PYG{+w}{ }42\PYG{+w}{ }56\PYG{+w}{ }70\PYG{+w}{ }84\PYG{+w}{ }98\PYG{+w}{ }112\PYG{+w}{ }126\PYG{+w}{ }140\PYG{+w}{ }154\PYG{+w}{ }168\PYG{+w}{ }196\PYG{+w}{ }\PYG{n+nt}{\PYGZlt{}/domain\PYGZgt{}}
+\PYG{+w}{    }\PYG{n+nt}{\PYGZlt{}/array\PYGZgt{}}
+\PYG{+w}{    }\PYG{n+nt}{\PYGZlt{}array}\PYG{+w}{ }\PYG{n+na}{id=}\PYG{l+s}{\PYGZdq{}fr\PYGZdq{}}\PYG{+w}{ }\PYG{n+na}{size=}\PYG{l+s}{\PYGZdq{}[3]\PYGZdq{}}\PYG{n+nt}{\PYGZgt{}}
+\PYG{+w}{      }\PYG{n+nt}{\PYGZlt{}domain}\PYG{+w}{ }\PYG{n+na}{for=}\PYG{l+s}{\PYGZdq{}fr[0]\PYGZdq{}}\PYG{n+nt}{\PYGZgt{}}\PYG{+w}{ }14\PYG{+w}{ }28\PYG{+w}{ }42\PYG{+w}{ }56\PYG{+w}{ }70\PYG{+w}{ }126\PYG{+w}{ }140\PYG{+w}{ }154\PYG{+w}{ }182\PYG{+w}{ }196\PYG{+w}{ }\PYG{n+nt}{\PYGZlt{}/domain\PYGZgt{}}
+\PYG{+w}{      }\PYG{n+nt}{\PYGZlt{}domain}\PYG{+w}{ }\PYG{n+na}{for=}\PYG{l+s}{\PYGZdq{}fr[1]\PYGZdq{}}\PYG{n+nt}{\PYGZgt{}}\PYG{+w}{ }14\PYG{+w}{ }28\PYG{+w}{ }42\PYG{+w}{ }56\PYG{+w}{ }70\PYG{+w}{ }98\PYG{+w}{ }140\PYG{+w}{ }154\PYG{+w}{ }168\PYG{+w}{ }182\PYG{+w}{ }196\PYG{+w}{ }\PYG{n+nt}{\PYGZlt{}/domain\PYGZgt{}}
+\PYG{+w}{      }\PYG{n+nt}{\PYGZlt{}domain}\PYG{+w}{ }\PYG{n+na}{for=}\PYG{l+s}{\PYGZdq{}fr[2]\PYGZdq{}}\PYG{n+nt}{\PYGZgt{}}\PYG{+w}{ }14\PYG{+w}{ }28\PYG{+w}{ }42\PYG{+w}{ }56\PYG{+w}{ }70\PYG{+w}{ }84\PYG{+w}{ }98\PYG{+w}{ }112\PYG{+w}{ }126\PYG{+w}{ }140\PYG{+w}{ }154\PYG{+w}{ }168\PYG{+w}{ }182\PYG{+w}{ }196\PYG{+w}{ }\PYG{n+nt}{\PYGZlt{}/domain\PYGZgt{}}
+\PYG{+w}{    }\PYG{n+nt}{\PYGZlt{}/array\PYGZgt{}}
+\PYG{+w}{  }\PYG{n+nt}{\PYGZlt{}/variables\PYGZgt{}}
+\PYG{+w}{  }\PYG{n+nt}{\PYGZlt{}constraints\PYGZgt{}}
+\PYG{+w}{    }\PYG{n+nt}{\PYGZlt{}intension\PYGZgt{}}\PYG{+w}{ }eq(dist(fe[0],fr[0]),140)\PYG{+w}{ }\PYG{n+nt}{\PYGZlt{}/intension\PYGZgt{}}
+\PYG{+w}{    }...
+\PYG{+w}{  }\PYG{n+nt}{\PYGZlt{}/constraints\PYGZgt{}}
+\PYG{n+nt}{\PYGZlt{}/instance\PYGZgt{}}
+\end{Verbatim}
