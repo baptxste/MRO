@@ -86,6 +86,12 @@ for i, station in enumerate(stations):
             else:
                 ListConstraints.append(abs(delta_i - d))
 
+    print(l1 := len(Problem.Domain(f"fe_{i}")))
+    print(l2 := len(Problem.Domain(f"fr_{i}")))
+    print(l3 := len(ListConstraints))
+    assert l1*l2 == l3
+
+    # Problème
     Problem.AddFunction([f"fe_{i}", f"fr_{i}"], ListConstraints)
 
 # Contrainte avec interférences (dure)
