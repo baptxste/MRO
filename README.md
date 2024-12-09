@@ -13,11 +13,13 @@ Dans `COP.py` ya un timeout dans le solveur, il faut vérifier si le code n'a pa
 
 Les fichiers dans `results_cop` sont structurés pour être chargé et faire un script d'analyse.
 
-`VCSP.py` contient le code pour la deuxième partie, mais il faut encore changer quelques aspects:
+`VCSP.py` génère les fichier dans le format `.wcsp` pour donner à un solveur.
 
-1. Le traitement des dossiers est copié de la première partie, il faut peut-être changer quelques parties.
-2. Les contraintes 2 et 3 ne sont peut-être pas encore correcte, il s'agit en ce moment que de l'idée générale.
-3. On pourrait éventuellement changer `penalty` pour les contraintes dures, peut-être des valuers plus grandes (?)
+Pour utiliser `toulbar2`, on peut l'installer soit localement sur la machine, soit dans un Google Colab. Pour utiliser le solveur sur un des fichiers, on lance la commande:
+
+```bash
+$ toulbar2 results_wcsp/<input_file_name>.wcsp -w=<solution_file_name>.sol
+```
 
 ## Rapport
 
