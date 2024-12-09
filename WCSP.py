@@ -55,7 +55,7 @@ objectif = args.objectif
 # solvers = ["ACE","Choco" ]
 file_name = files_sorted[num_file]
 
-with open(os.path.join(path,'TP/donnees_cop', file_name)) as file: 
+with open(os.path.join(path,'TP/donnees_wcsp', file_name)) as file: 
     data = json.load(file)
 print(f"Fichier en cours : {file_name}, contrainte : {objectif}")
 
