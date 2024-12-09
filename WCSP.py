@@ -114,6 +114,14 @@ for i, station in enumerate(stations):
         content += f"{k[0]} {k[1]} {v}\n"
 
 
+# Deuxième contrainte
+#
+# Il faut l'encoder en deux contraintes,
+# l'une pour les emetteurs et l'autre pour les recepteurs
+#
+# Arité: 2
+# Portée: x et y, après + n_interferences pour la 2eme
+# Coût par défaut: 1000 (dure)
 n_interferences = len(data["interferences"])
 costs_2_e = {}
 costs_2_r = {}
@@ -140,7 +148,7 @@ for interference in data["interferences"]:
         default_cost = penalty
         costs_2_e = {k: v for k, v in costs_2_e.items() if v == 0}
 
-    content += f"2 {i} {i+n_interferences} {default_cost} {n_tuples_e}\n"
+    content += f"2 {x} {y} {default_cost} {n_tuples_e}\n"
     for k, v in costs_2_e.items():
         content += f"{k[0]} {k[1]} {v}\n"
 
@@ -160,8 +168,68 @@ for interference in data["interferences"]:
         default_cost = penalty
         costs_2_r = {k: v for k, v in costs_2_r.items() if v == 0}
 
-    content += f"2 {i+n_stations} {i+n_interferences+n_stations} {default_cost} {n_tuples_r}\n"
+    content += f"2 {x+n_interferences} {y+n_interferences} {default_cost} {n_tuples_r}\n"
     for k, v in costs_2_r.items():
+        content += f"{k[0]} {k[1]} {v}\n"
+
+
+# Troisième contrainte
+#
+# Il faut l'encoder en deux contraintes,
+# l'une pour les emetteurs et l'autre pour les recepteurs
+#
+# Arité: 2
+# Portée: x et y, après + n_liaisons pour la 2eme
+# Coût par défaut: 1000 (dure)
+n_liaisons = len(data["liaisons"])
+costs_3_e = {}
+costs_3_r = {}
+for liaison in data["liaisons"]:
+    x, y = liaison["x"], liaison["y"]
+
+    n_zeros_e = 0
+    n_tuples_e = 0
+    n_zeros_r = 0
+    n_tuples_r = 0
+
+    for i, a in enumerate(stations[x]["emetteur"]):
+        for j, b in enumerate(stations[y]["emetteur"]):
+            if a == b:
+                costs_3_e[(i, j)] = 0
+                n_zeros_e += 1
+            else:
+                costs_3_e[(i, j)] = 100
+            n_tuples_e += 1
+
+    if n_zeros_e > len(costs_3_e.values()) - n_zeros_e:
+        default_cost = 0
+        costs_3_e = {k: v for k, v in costs_3_e.items() if v == penalty}
+    else:
+        default_cost = penalty
+        costs_3_e = {k: v for k, v in costs_3_e.items() if v == 0}
+
+    content += f"2 {x} {y} {default_cost} {n_tuples_e}\n"
+    for k, v in costs_3_e.items():
+        content += f"{k[0]} {k[1]} {v}\n"
+
+    for i, a in enumerate(stations[x]["recepteur"]):
+        for j, b in enumerate(stations[y]["recepteur"]):
+            if a == b:
+                costs_3_r[(i, j)] = 0
+                n_zeros_r += 1
+            else:
+                costs_3_r[(i, j)] = 100
+            n_tuples_r += 1
+
+    if n_zeros_r > len(costs_3_r.values()) - n_zeros_r:
+        default_cost = 0
+        costs_3_r = {k: v for k, v in costs_3_r.items() if v == penalty}
+    else:
+        default_cost = penalty
+        costs_3_r = {k: v for k, v in costs_3_r.items() if v == 0}
+
+    content += f"2 {x+n_liaisons} {y+n_liaisons} {default_cost} {n_tuples_r}\n"
+    for k, v in costs_3_r.items():
         content += f"{k[0]} {k[1]} {v}\n"
 
 print(content)
