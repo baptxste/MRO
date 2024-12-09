@@ -31,23 +31,27 @@ path = os.path.dirname(os.path.abspath(__file__))
 files_sorted = [
     "celar_50_7_10_5_0.800000_0.json",
     "celar_50_7_10_5_0.800000_1.json",
-    "celar_50_7_10_5_0.800000_6.json",
-    "celar_50_7_10_5_0.800000_7.json",
-    "celar_50_7_10_5_0.800000_8.json",
+    "celar_50_7_10_5_0.800000_4.json",
+    "celar_50_8_10_5_0.800000_8.json",
+    "celar_50_7_10_5_0.800000_9.json",
+
     "celar_150_13_15_5_0.800000_2.json",
-    "celar_150_13_15_5_0.800000_26.json",
-    "celar_150_13_15_5_0.800000_28.json",
-    "celar_150_13_15_5_0.800000_29.json",
-    "celar_150_13_15_5_0.800000_8.json",
-    "celar_250_25_15_5_0.820000_20.json",
-    "celar_250_25_15_5_0.820000_22.json",
-    "celar_250_25_15_5_0.820000_5.json",
-    "celar_250_25_15_5_0.820000_7.json",
-    "celar_250_25_15_5_0.820000_9.json",
-    "celar_500_30_20_5_0.870000_24.json",
-    "celar_500_30_20_5_0.870000_29.json",
-    "celar_500_30_20_5_0.870000_45.json",
-    "celar_500_30_20_5_0.870000_48.json"
+    "celar_150_13_15_5_0.800000_9.json",
+    "celar_150_13_15_5_0.800000_18.json",
+    "celar_150_13_15_5_0.800000_20.json",
+    "celar_150_13_15_5_0.800000_25.json"
+
+    "celar_250_25_15_5_0.820000_0.json",
+    "celar_250_25_15_5_0.820000_6.json",
+    "celar_250_25_15_5_0.820000_8.json",
+    "celar_250_25_15_5_0.820000_17.json",
+    "celar_250_25_15_5_0.820000_29.json",
+
+    "celar_500_30_20_5_0.870000_0.json",
+    "celar_500_30_20_5_0.870000_8.json",
+    "celar_500_30_20_5_0.870000_25.json",
+    "celar_500_30_20_5_0.870000_30.json",
+    "celar_500_30_20_5_0.870000_49.json"
 ]
 
 num_file = args.num_file
@@ -252,7 +256,7 @@ wcsp = header + content
 print(wcsp)
 
 try:
-    output_filename = instance + ".wcsp"
+    output_filename = "results_wcsp/" + file_name[:-5] + ".wcsp"
     with open(output_filename, "w") as f:
         f.write(wcsp)
 
