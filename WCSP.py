@@ -99,7 +99,7 @@ for i, station in enumerate(stations):
                 costs_1[(j, k)] = 0
                 n_zeros += 1
             else:
-                costs_1[(j, k)] = abs(delta_i - d)
+                costs_1[(j, k)] = penalty
             n_tuples += 1
 
     if n_zeros > len(costs_1.values()) - n_zeros:
