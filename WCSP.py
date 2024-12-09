@@ -109,8 +109,59 @@ for i, station in enumerate(stations):
         default_cost = penalty
         costs_1 = {k: v for k, v in costs_1.items() if v == 0}
 
-    content += f"1 {i} {i+n_stations} {default_cost} {n_tuples}\n"
+    content += f"2 {i} {i+n_stations} {default_cost} {n_tuples}\n"
     for k, v in costs_1.items():
+        content += f"{k[0]} {k[1]} {v}\n"
+
+
+n_interferences = len(data["interferences"])
+costs_2_e = {}
+costs_2_r = {}
+for interference in data["interferences"]:
+    x, y, delta_xy = interference["x"], interference["y"], interference["Delta"]
+    n_zeros_e = 0
+    n_tuples_e = 0
+    n_zeros_r = 0
+    n_tuples_r = 0
+
+    for i, a in enumerate(stations[x]["emetteur"]):
+        for j, b in enumerate(stations[y]["emetteur"]):
+            if abs(a - b) >= delta_xy:
+                costs_2_e[(i, j)] = 0
+                n_zeros_e += 1
+            else:
+                costs_2_e[(i, j)] = penalty
+            n_tuples_e += 1
+
+    if n_zeros_e > len(costs_2_e.values()) - n_zeros_e:
+        default_cost = 0
+        costs_2_e = {k: v for k, v in costs_2_e.items() if v == penalty}
+    else:
+        default_cost = penalty
+        costs_2_e = {k: v for k, v in costs_2_e.items() if v == 0}
+
+    content += f"2 {i} {i+n_interferences} {default_cost} {n_tuples_e}\n"
+    for k, v in costs_2_e.items():
+        content += f"{k[0]} {k[1]} {v}\n"
+
+    for i, a in enumerate(stations[x]["recepteur"]):
+        for j, b in enumerate(stations[y]["recepteur"]):
+            if abs(a - b) >= delta_xy:
+                costs_2_r[(i, j)] = 0
+                n_zeros_r += 1
+            else:
+                costs_2_r[(i, j)] = penalty
+            n_tuples_r += 1
+
+    if n_zeros_r > len(costs_2_r.values()) - n_zeros_r:
+        default_cost = 0
+        costs_2_r = {k: v for k, v in costs_2_r.items() if v == penalty}
+    else:
+        default_cost = penalty
+        costs_2_r = {k: v for k, v in costs_2_r.items() if v == 0}
+
+    content += f"2 {i+n_stations} {i+n_interferences+n_stations} {default_cost} {n_tuples_r}\n"
+    for k, v in costs_2_r.items():
         content += f"{k[0]} {k[1]} {v}\n"
 
 print(content)
