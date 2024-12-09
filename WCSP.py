@@ -80,11 +80,14 @@ dom_size = max(max_e, max_r)
 domain_sizes_fe = [len(station["emetteur"]) for station in stations]
 domain_sizes_fr = [len(station["recepteur"]) for station in stations]
 
+n_cost_functions = 0
+
 # Première contrainte
 # Arité: 2
 # Portée: i et i + n_stations
 # Coût par défaut: 1000 (dure)
 
+header = f"{instance} {n_variables} {dom_size}"
 content = ""
 costs_1 = {}
 for i, station in enumerate(stations):
@@ -112,6 +115,8 @@ for i, station in enumerate(stations):
     content += f"2 {i} {i+n_stations} {default_cost} {n_tuples}\n"
     for k, v in costs_1.items():
         content += f"{k[0]} {k[1]} {v}\n"
+
+    n_cost_functions += 1
 
 
 # Deuxième contrainte
@@ -152,6 +157,8 @@ for interference in data["interferences"]:
     for k, v in costs_2_e.items():
         content += f"{k[0]} {k[1]} {v}\n"
 
+    n_cost_functions += 1
+
     for i, a in enumerate(stations[x]["recepteur"]):
         for j, b in enumerate(stations[y]["recepteur"]):
             if abs(a - b) >= delta_xy:
@@ -171,6 +178,8 @@ for interference in data["interferences"]:
     content += f"2 {x+n_interferences} {y+n_interferences} {default_cost} {n_tuples_r}\n"
     for k, v in costs_2_r.items():
         content += f"{k[0]} {k[1]} {v}\n"
+
+    n_cost_functions += 1
 
 
 # Troisième contrainte
@@ -212,6 +221,8 @@ for liaison in data["liaisons"]:
     for k, v in costs_3_e.items():
         content += f"{k[0]} {k[1]} {v}\n"
 
+    n_cost_functions += 1
+
     for i, a in enumerate(stations[x]["recepteur"]):
         for j, b in enumerate(stations[y]["recepteur"]):
             if a == b:
@@ -232,60 +243,19 @@ for liaison in data["liaisons"]:
     for k, v in costs_3_r.items():
         content += f"{k[0]} {k[1]} {v}\n"
 
-print(content)
-assert 0
+    n_cost_functions += 1
 
-for interference in data["interferences"]:
-    x, y, delta_xy = interference["x"], interference["y"], interference["Delta"]
+header += f" {n_cost_functions} 1000\n"
 
-    ListConstraintsFe = []
-    for a in stations[x]["emetteur"]:
-        for b in stations[y]["emetteur"]:
-            if abs(a - b) >= delta_xy:
-                ListConstraintsFe.append(0)
-            else:
-                ListConstraintsFe.append(penalty)
+wcsp = header + content
 
-    # Problem.AddFunction([f"fe_{x}", f"fe_{y}"], ListConstraintsFe)
+print(wcsp)
 
-    ListConstraintsFr = []
-    for a in stations[x]["recepteur"]:
-        for b in stations[y]["recepteur"]:
-            if abs(a - b) >= delta_xy:
-                ListConstraintsFr.append(0)
-            else:
-                ListConstraintsFr.append(penalty)
+try:
+    output_filename = instance + ".wcsp"
+    with open(output_filename, "w") as f:
+        f.write(wcsp)
 
-    # Problem.AddFunction([f"fr_{x}", f"fr_{y}"], ListConstraintsFr)
-
-# Contrainte 4 (souple)
-for liaison in data["liaisons"]:
-    x, y = liaison["x"], liaison["y"]
-
-    # fe[x] == fe[y]
-    fe_costs = []
-    fe_domain_x = stations[x]["emetteur"]
-    fe_domain_y = stations[y]["emetteur"]
-
-    for val_x in fe_domain_x:
-        for val_y in fe_domain_y:
-            if val_x == val_y:
-                fe_costs.append(0)
-            else:
-                fe_costs.append(penalty)
-
-    # Problem.AddFunction([f"fe_{x}", f"fe_{y}"], fe_costs)
-
-    # fr[x] == fr[y]
-    fr_costs = []
-    fr_domain_x = stations[x]["recepteur"]
-    fr_domain_y = stations[y]["recepteur"]
-
-    for val_x in fr_domain_x:
-        for val_y in fr_domain_y:
-            if val_x == val_y:
-                fr_costs.append(0)
-            else:
-                fr_costs.append(penalty)
-
-    # Problem.AddFunction([f"fr_{x}", f"fr_{y}"], fr_costs)
+    print(f"WCSP written to {output_filename}")
+except Exception as e:
+    print(f"Error writing file: {e}")
