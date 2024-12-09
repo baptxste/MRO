@@ -39,7 +39,7 @@ files_sorted = [
     "celar_150_13_15_5_0.800000_9.json",
     "celar_150_13_15_5_0.800000_18.json",
     "celar_150_13_15_5_0.800000_20.json",
-    "celar_150_13_15_5_0.800000_25.json"
+    "celar_150_13_15_5_0.800000_25.json",
 
     "celar_250_25_15_5_0.820000_0.json",
     "celar_250_25_15_5_0.820000_6.json",
@@ -51,7 +51,7 @@ files_sorted = [
     "celar_500_30_20_5_0.870000_8.json",
     "celar_500_30_20_5_0.870000_25.json",
     "celar_500_30_20_5_0.870000_30.json",
-    "celar_500_30_20_5_0.870000_49.json"
+    "celar_500_30_20_5_0.870000_49.json",
 ]
 
 num_file = args.num_file
@@ -61,7 +61,7 @@ file_name = files_sorted[num_file]
 
 with open(os.path.join(path,'TP/donnees_wcsp', file_name)) as file: 
     data = json.load(file)
-print(f"Fichier en cours : {file_name}, contrainte : {objectif}")
+print(f"Fichier en cours : {file_name}")
 
 stations = data["stations"]
 n_stations = len(stations)
@@ -253,13 +253,13 @@ header += f" {n_cost_functions} 1000\n"
 
 wcsp = header + content
 
-print(wcsp)
+# print(wcsp)
 
 try:
     output_filename = "results_wcsp/" + file_name[:-5] + ".wcsp"
     with open(output_filename, "w") as f:
         f.write(wcsp)
 
-    print(f"WCSP written to {output_filename}")
+    print(f"WCSP written to {output_filename}\n")
 except Exception as e:
     print(f"Error writing file: {e}")
