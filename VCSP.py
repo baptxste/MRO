@@ -1,4 +1,3 @@
-from pytoulbar2 import CFN
 import json
 import os
 from time import time
@@ -63,39 +62,60 @@ print(f"Fichier en cours : {file_name}, contrainte : {objectif}")
 stations = data["stations"]
 n_stations = len(stations)
 
-Problem = CFN()
+instance = "StationsProblem"
+n_variables = 2*n_stations
+dom_size = 0
+penalty = 1000
 
-for i in range(n_stations):
-    emetteur_domain = stations[i]["emetteur"]
-    recepteur_domain = stations[i]["recepteur"]
+max_e = 0
+max_r = 0
+for s in stations:
+    if len(s["emetteur"]) > max_e:
+        max_e = len(s["emetteur"])
+    if len(s["recepteur"]) > max_r:
+        max_r = len(s["recepteur"])
 
-    Problem.AddVariable(f"fe_{i}", list(emetteur_domain))
-    Problem.AddVariable(f"fr_{i}", list(recepteur_domain))
+dom_size = max(max_e, max_r)
 
-# Contrainte sur l'écart delta (souple)
+domain_sizes_fe = [len(station["emetteur"]) for station in stations]
+domain_sizes_fr = [len(station["recepteur"]) for station in stations]
+
+# Première contrainte
+# Arité: 2
+# Portée: i et i + n_stations
+# Coût par défaut: 1000 (dure)
+
+content = ""
+costs_1 = {}
 for i, station in enumerate(stations):
     delta_i = station["delta"]
 
-    ListConstraints = []
-
-    for a in stations[i]["emetteur"]:
-        for b in stations[i]["recepteur"]:
+    n_zeros = 0
+    n_tuples = 0
+    for j, a in enumerate(stations[i]["emetteur"]):
+        for k, b in enumerate(stations[i]["recepteur"]):
             d = abs(a - b)
             if d == delta_i:
-                ListConstraints.append(0)
+                costs_1[(j, k)] = 0
+                n_zeros += 1
             else:
-                ListConstraints.append(abs(delta_i - d))
+                costs_1[(j, k)] = abs(delta_i - d)
+            n_tuples += 1
 
-    print(l1 := len(Problem.Domain(f"fe_{i}")))
-    print(l2 := len(Problem.Domain(f"fr_{i}")))
-    print(l3 := len(ListConstraints))
-    assert l1*l2 == l3
+    if n_zeros > len(costs_1.values()) - n_zeros:
+        default_cost = 0
+        costs_1 = {k: v for k, v in costs_1.items() if v == penalty}
+    else:
+        default_cost = penalty
+        costs_1 = {k: v for k, v in costs_1.items() if v == 0}
 
-    # Problème
-    Problem.AddFunction([f"fe_{i}", f"fr_{i}"], ListConstraints)
+    content += f"1 {i} {i+n_stations} {default_cost} {n_tuples}\n"
+    for k, v in costs_1.items():
+        content += f"{k[0]} {k[1]} {v}\n"
 
-# Contrainte avec interférences (dure)
-penalty = 100_000
+print(content)
+assert 0
+
 for interference in data["interferences"]:
     x, y, delta_xy = interference["x"], interference["y"], interference["Delta"]
 
@@ -107,7 +127,7 @@ for interference in data["interferences"]:
             else:
                 ListConstraintsFe.append(penalty)
 
-    Problem.AddFunction([f"fe_{x}", f"fe_{y}"], ListConstraintsFe)
+    # Problem.AddFunction([f"fe_{x}", f"fe_{y}"], ListConstraintsFe)
 
     ListConstraintsFr = []
     for a in stations[x]["recepteur"]:
@@ -117,28 +137,9 @@ for interference in data["interferences"]:
             else:
                 ListConstraintsFr.append(penalty)
 
-    Problem.AddFunction([f"fr_{x}", f"fr_{y}"], ListConstraintsFr)
+    # Problem.AddFunction([f"fr_{x}", f"fr_{y}"], ListConstraintsFr)
 
-# Contrainte 3 (ce n'est pas encore correct)
-for r, max_freqs in enumerate(data["regions"]):
-    region_stations = [i for i, s in enumerate(stations) if s["region"] == r]
-
-    if region_stations:
-        fe_vars = [f"fe_{i}" for i in region_stations]
-        fr_vars = [f"fr_{i}" for i in region_stations]
-        all_vars = set(fe_vars + fr_vars)
-
-        distinct_var_name = f"distinct_count_r{r}"
-        Problem.AddVariable(distinct_var_name, list(range(len(all_vars) + 1)))
-
-        for count in range(len(all_vars) + 1):
-            cost = max(0, count - max_freqs)
-            Problem.AddFunction([distinct_var_name], [cost])
-
-        # Use AllDifferent with weighted cost to enforce distinct values
-        Problem.AddAllDifferent(all_vars, distinct_var_name)
-
-# Contrainte 4 (dure)
+# Contrainte 4 (souple)
 for liaison in data["liaisons"]:
     x, y = liaison["x"], liaison["y"]
 
@@ -154,7 +155,7 @@ for liaison in data["liaisons"]:
             else:
                 fe_costs.append(penalty)
 
-    Problem.AddFunction([f"fe_{x}", f"fe_{y}"], fe_costs)
+    # Problem.AddFunction([f"fe_{x}", f"fe_{y}"], fe_costs)
 
     # fr[x] == fr[y]
     fr_costs = []
@@ -168,7 +169,4 @@ for liaison in data["liaisons"]:
             else:
                 fr_costs.append(penalty)
 
-    Problem.AddFunction([f"fr_{x}", f"fr_{y}"], fr_costs)
-
-res = Problem.Solve()
-print(res)
+    # Problem.AddFunction([f"fr_{x}", f"fr_{y}"], fr_costs)
